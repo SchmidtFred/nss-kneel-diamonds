@@ -2,10 +2,27 @@
 
 .options {
     flex-basis: 24%;
-    margin: 0 2rem;
+    margin: 1rem 2rem;
     border: 1px dashed dodgerblue;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
 }
 
+.choices {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  
+  .typesList {
+    display: flex;
+    flex-flow: row  nowrap;
+    justify-content: flex-start;
+    margin: 1rem 0 2rem 2rem;
+    padding: 0;
+  }
+
+  .customOrders {
+    margin: 1rem 0 2rem 2rem;
+  }
