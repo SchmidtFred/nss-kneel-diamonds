@@ -1,4 +1,4 @@
-import { amISelected, getSizes, setSize } from "./database.js";
+import { amISelected, getSizes, setSize } from "./dataAccess.js";
 
 const sizes = getSizes();
 

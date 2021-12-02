@@ -1,4 +1,4 @@
-import { amISelected, getTypes, setType } from "./database.js";
+import { amISelected, getTypes, setType } from "./dataAccess.js";
 
 const types = getTypes();
 

@@ -1,4 +1,4 @@
-import { getOrders, getMetals, getSizes, getStyles, getTypes } from "./database.js";
+import { getOrders, getMetals, getSizes, getStyles, getTypes } from "./dataAccess.js";
 
 const buildOrderListItem = (order, metals, styles, sizes, types) => {
 	//find and grab the ids of the different elements of the order

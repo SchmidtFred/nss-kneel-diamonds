@@ -1,4 +1,4 @@
-import { amISelected, getMetals, setMetal } from "./database.js";
+import { amISelected, getMetals, setMetal } from "./dataAccess.js";
 
 const metals = getMetals();
 

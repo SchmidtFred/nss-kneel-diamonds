@@ -1,4 +1,4 @@
-import { amISelected, getStyles, setStyle } from "./database.js";
+import { amISelected, getStyles, setStyle } from "./dataAccess.js";
 
 const styles = getStyles();
 
