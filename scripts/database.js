@@ -65,18 +65,22 @@ export const getOrders = () => {
 
 export const setMetal = (id) => {
 	database.orderBuilder.metalId = id;
+	document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
 export const setSize = (id) => {
 	database.orderBuilder.sizeId = id;
+	document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
 export const setStyle = (id) => {
 	database.orderBuilder.styleId = id;
+	document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
 export const setType = (id) => {
     database.orderBuilder.typeId = id;
+	document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
 export const addCustomOrder = () => {
@@ -99,3 +103,12 @@ export const addCustomOrder = () => {
 	//Broadcast a notifcation that permanent state has changed
 	document.dispatchEvent(new CustomEvent("stateChanged"));
 };
+
+//determines if the id that has been input not only exists but also matches with the id of the property
+export const amISelected = (fkToFind, id) => {
+	if (database.orderBuilder[fkToFind] === id) {
+		return true;
+	} else {
+		return false;
+	}
+}

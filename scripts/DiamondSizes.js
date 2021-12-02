@@ -1,4 +1,4 @@
-import { getSizes, setSize } from "./database.js";
+import { amISelected, getSizes, setSize } from "./database.js";
 
 const sizes = getSizes();
 
@@ -13,8 +13,12 @@ export const DiamondSizes = () => {
 
 	// Use .map() for converting objects to <li> elements
 	const listItems = sizes.map((size) => {
+		let checked = "";
+		if (amISelected("sizeId",size.id)) {
+			checked = "checked"
+		}
 		return `<li>
-            <input type="radio" name="size" value="${size.id}" /> ${size.carets}
+            <input type="radio" name="size" value="${size.id}" ${checked}/> ${size.carets}
         </li>`;
 	});
 

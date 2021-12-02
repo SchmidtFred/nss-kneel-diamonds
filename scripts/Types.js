@@ -1,4 +1,4 @@
-import { getTypes, setType } from "./database.js";
+import { amISelected, getTypes, setType } from "./database.js";
 
 const types = getTypes();
 
@@ -13,8 +13,12 @@ export const Types = () => {
 
 	const listItems = types
 		.map((type) => {
+			let checked = "";
+			if (amISelected("typeId",type.id)) {
+				checked = "checked"
+			}
 			return `<li>
-            <input type="radio" name="type" value="${type.id}" />${type.type}
+            <input type="radio" name="type" value="${type.id}" ${checked}/>${type.type}
             </li>`;
 		})
 		.join("\n");

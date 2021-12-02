@@ -1,4 +1,4 @@
-import { getStyles, setStyle } from "./database.js";
+import { amISelected, getStyles, setStyle } from "./database.js";
 
 const styles = getStyles();
 
@@ -13,8 +13,12 @@ export const JewelryStyles = () => {
 
 	// Use .map() for converting objects to <li> elements
 	const listItemsArray = styles.map((style) => {
+		let checked = "";
+		if (amISelected("styleId",style.id)) {
+			checked = "checked"
+		}
 		return `<li>
-            <input type="radio" name="style" value="${style.id}" /> ${style.style}
+            <input type="radio" name="style" value="${style.id}" ${checked}/> ${style.style}
             </li>`;
 	});
 
